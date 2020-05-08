@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   get(endpoint): Promise<any> {
-    const url = `${API_HOST}${endpoint}`;
+    const url = `http://ec2-3-93-150-209.compute-1.amazonaws.com:8080/api/v0/${endpoint}`;
     const req = this.http.get(url, this.httpOptions).pipe(map(this.extractData));
 
     return req
